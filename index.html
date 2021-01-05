@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab App</title>
+    <link rel="stylesheet" href="css/primitive.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<body>
+    
+    <div  class="small-container">
+        
+        <header>
+            <h5 class="he" class="text-logo svelte-1qzmo08">notecards</h5>
+            <form autocomplete="off">
+                <input id="item" type="text" placeholder="New">
+            </form>
+        </header>
+    
+    
+      <div id="all" class="opacity">
+        <h2 class="n-header">Notes</h2>
+        <ul></ul>
+    
+        <button>Clear All</button>
+      </div>
+    </div>
+  
+    <script src="js/scripts.js"></script>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+  $('input').on('focus', function() {
+   
+        if(!$('.opacity').hasClass('dark'))
+        {
+          
+           $('.opacity').addClass('dark');
+          }
+        if(!$('.he').hasClass('he-s'))
+        {
+          
+           $('.he').addClass('he-s');
+           $('.he').text('New note');
+          }
+
+  });
+
+ $('input').on('blur', function() {
+       if($('.opacity').hasClass('dark'))
+       {
+           $('.opacity').removeClass('dark');
+           
+       
+       }
+       
+          
+           $('.he').removeClass('he-s');
+           $('.he').text('notecards');
+          
+ });
+});
+</script>
+<style>
+    .dark {
+        opacity: 0;
+        transform: translateY(80px)!important;
+    }
+
+    * {
+        font-family: 'Circe', sans-serif !important;
+        transition: ease 0.3s;
+    }
+    .he-s {
+        transform: translateY(20px) !important;
+        opacity: 1;
+        
+
+    }
+    .x {
+        opacity: 0;
+        
+    }
+    body {
+        background-color: #111115;
+        
+    }
+    .he {
+        color: white;
+        font-size: 20px !important;
+        margin-bottom: 9px;
+        transform: translateY(0px);
+    }
+    .n-header {
+        margin-top: 20px !important;
+        margin-bottom: 5px !important;
+        color: white;
+    }
+    .small-container {
+        max-width: 600px;
+        position: relative;
+    }
+    input {
+        background-color: #202027 !important;
+        outline: none !important;
+        border: 0px !important;
+        box-shadow: none;
+    }
+    input:focus {
+        z-index: 99999;
+        transform: translateY(80px);
+        
+    }
+    
+    
+    ul {
+        list-style: none;
+        
+        padding: 0px;
+        
+    }
+    li {
+        margin-bottom: 5px;
+        background-color: #1b1b20;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 10px;
+        color: white;
+        animation: ease in 0.3s;
+        padding: 18px;
+        margin-bottom: 20px;
+    }
+    @keyframes in {
+        0% {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    
+  
+</style>
+<!-- <script>
+    $(document).ready(function(){
+     function focus() {
+     
+          if($('.opacity').hasClass('dark'))
+          {
+            $('.opacity').removeClass('dark');
+             
+          } else {
+            $('.opacity').addClass('dark');
+          }
+  
+    };
+  
+  
+   
+  });
+</script> -->
+
+  
