@@ -9,7 +9,8 @@ const data = JSON.parse(localStorage.getItem('items'));
 
 const liMaker = (text) => {
   const li = document.createElement('li');
-  li.textContent = text;
+  li.innerHTML = (`<span>${text}</span> <div class="butns"> <button>Archive</button> <button>Delete</button> </div>`);
+  
   ul.appendChild(li);
 }
 
@@ -20,6 +21,7 @@ form.addEventListener('submit', function (e) {
   localStorage.setItem('items', JSON.stringify(itemsArray));
   liMaker(input.value);
   input.value = "";
+  
 });
 
 data.forEach(item => {
