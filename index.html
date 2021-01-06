@@ -24,7 +24,7 @@
                 </svg>
             </div>
             <form onsubmit="sub();" autocomplete="off">
-                <input autofocus disabled id="item" type="text" placeholder="Type here...">
+                <input disabled id="item" type="text" placeholder="Type here...">
                 <input disabled id="submit-btn" type="submit" value="Save">
             </form>
         </header>
@@ -32,7 +32,15 @@
     
       <div id="all" class="opacity">
         <!-- <h2 class="n-header">Notes</h2> -->
-        <ul></ul>
+        <ul>
+            <li>
+                <span>Swipe Me</span>
+                <div class="butns">
+                    <button>Archive</button>
+                    <button>Delete</button>
+                </div>
+            </li>
+        </ul>
     
         <button>Clear All</button>
       </div>
@@ -43,6 +51,25 @@
 </body>
 </html>
 <script>
+document.querySelector("ul").addEventListener("click", (e) => {
+  const li = e.target.closest("li");
+  const btn = e.target.closest("button");
+  if (li && li.scrollLeft === 0) {
+    li.scrollBy({
+      left: 1,
+      behavior: "smooth"
+    });
+  } else if (!btn && li) {
+    li.scrollBy({
+      left: -1,
+      behavior: "smooth"
+    });
+  } else if (btn && li) {
+    li.remove();
+  }
+});
+
+
     function preventDefault(e) {
   e.preventDefault();
 }
@@ -154,6 +181,11 @@ function sub() {
         background-color: rgba(0, 128, 128, 0);
 
     }
+    .butns {
+        position: absolute;
+        right: -250px;
+        top: 0;
+    }
     .top-t {
         transform: translateY(-83px) !important;
         opacity: 0;
@@ -262,6 +294,32 @@ function sub() {
         animation: ease in 0.3s;
         padding: 1.3125rem;
         margin-bottom: 20px;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        display: flex;
+        position: relative;
+        scrollbar-width: none;
+        padding-left: 0px;
+        cursor: grab;
+        scrollbar-width: none;
+    }
+    li button {
+        height: 65px !important;
+        border-radius: 0px !important;
+    }
+    li button:nth-child(2) {
+        background-color: rgb(255, 42, 42);
+        border-color: rgb(255, 42, 42);
+    }
+    li::-webkit-scrollbar {
+  display: none;
+}
+    li > span {
+        padding-left: 1.3125rem;
+    }
+    li > * {
+    scroll-snap-align: start;
+    
     }
     @keyframes in {
         0% {
