@@ -159,7 +159,7 @@ function sub() {
  
 };
 </script>
-<style>
+<style id="my-dyn-css">
     .dark {
         opacity: 0;
         transform: translateY(80px)!important;
@@ -179,12 +179,14 @@ function sub() {
         transform: translateX(7px) !important;
         opacity: 1;
         background-color: rgba(0, 128, 128, 0);
-
+        
     }
     .butns {
         position: absolute;
-        right: -250px;
+        right: -100px;
         top: 0;
+        bottom: 0;
+        margin-bottom: 0px !important;
     }
     .top-t {
         transform: translateY(-83px) !important;
@@ -274,7 +276,7 @@ function sub() {
         opacity: 1;
     }
     .input-focus #item {
-        background-color: rgba(255, 255, 255, 0) !important;
+        background-color: rgba(155, 82, 82, 0) !important;
     }
     
     
@@ -306,12 +308,19 @@ function sub() {
         overflow-y: hidden;
     }
     li button {
-        height: 65px !important;
-        border-radius: 0px !important;
+        /* height: auto !important; */
+        border-radius: 10px;
+        z-index: 999999999999 !important;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        margin-bottom: 0px !important;
+        
     }
     li button:nth-child(2) {
         background-color: rgb(255, 42, 42);
         border-color: rgb(255, 42, 42);
+        right: 4px;
     }
     li::-webkit-scrollbar {
   display: none;
@@ -336,6 +345,14 @@ function sub() {
     
   
 </style>
+<script>
+function updateDynCss() {
+
+  var parentHeight = document.getElementsByTagName('li').clientHeight;
+  var style = ":root{--hex-parent-height:" + parentHeight + "px;}";
+  $("#my-dyn-css").empty().html(style);
+}
+</script>
 <!-- <script>
     $(document).ready(function(){
      function focus() {
