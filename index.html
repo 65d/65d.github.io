@@ -58,8 +58,10 @@ document.querySelector("ul").addEventListener("click", (e) => {
       left: -1,
       behavior: "smooth"
     });
-  } else if (btn && li) {
-    li.remove();
+  } else if (btn && li ) {
+    // li.remove();
+    
+    
   }
 });
 
@@ -166,7 +168,7 @@ function sub() {
     ul {
         display: flex;
     flex-direction: column-reverse;
-}
+    }
 
     .he-s {
         transform: translateY(0px) !important;
@@ -177,7 +179,7 @@ function sub() {
     }
     .butns {
         position: absolute;
-        right: -100px;
+        right: 0px;
         top: 0;
         bottom: 0;
         margin-bottom: 0px !important;
@@ -309,7 +311,12 @@ function sub() {
         bottom: 0;
         top: 0;
         margin-bottom: 0px !important;
-        
+        background-color: rgb(255, 42, 42) !important;
+        border-color: rgb(255, 42, 42);
+    }
+    li button:hover:active:focus {
+        background-color: rgb(255, 42, 42);
+        border-color: rgb(255, 42, 42);
     }
     li button:nth-child(2) {
         background-color: rgb(255, 42, 42);
