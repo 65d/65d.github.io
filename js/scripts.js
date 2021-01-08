@@ -16,6 +16,7 @@ const liMaker = (text) => {
   ul.appendChild(li);
 }
 
+
 form.addEventListener('submit', function (e) {
   last = localStorage.length + 1;
   e.preventDefault();
