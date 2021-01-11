@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="    background-color: #111115 !important;" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,11 +26,12 @@
             </header>
             <form onsubmit="sub();" autocomplete="off">
                 <input disabled id="item" type="text" placeholder="Type here...">
-                <input disabled id="submit-btn" type="submit" value="Save">
+                <input disabled id="submit-btn"  type="submit" value="Save">
+                <input disabled id="submit-btn2" type="submit" value="Cancel">
             </form>
     </div>
 </nav>
-<body>
+
     
     <div class="small-container">
         
@@ -115,6 +116,7 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
            
             $('#item').removeAttr('disabled');
             $('#submit-btn').removeAttr('disabled');
+            $('#submit-btn2').removeAttr('disabled');
             $('form').addClass('input-focus');
             $('.he').addClass('he-s');
             $('.to-t').addClass('top-t');
@@ -137,6 +139,7 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
             $('#item').prop('disabled', true);
             $('.to-t').removeClass('top-t');
             $('#submit-btn').prop('disabled', true);
+            $('#submit-bt2').prop('disabled', true);
             $('form').removeClass('input-focus');
             $('.he').removeClass('he-s');
             $('.he').text('notecards');
@@ -156,6 +159,7 @@ function sub() {
        
             $('#item').prop('disabled', true);
             $('#submit-btn').prop('disabled', true);
+            $('#submit-bt2').prop('disabled', true);
             $('form').removeClass('input-focus');
             $('.he').removeClass('he-s');
             $('.to-t').removeClass('top-t');
@@ -195,6 +199,7 @@ if (localStorage.length == 0) {
         max-width: 600px;
         position: relative;
         width: 90%;
+        
     }
     .dark {
         opacity: 0;
@@ -248,6 +253,13 @@ if (localStorage.length == 0) {
         z-index: 999999999999999999999999999999999999999;
         background-color: #0366ee !important;
     }
+    #submit-btn2 {
+        position: absolute;
+        top: -62px;
+        right: 80px;
+        z-index: 999999999999999999999999999999999999999;
+        background-color: #3b3b3b94 !important;
+    }
     .settings {
         position: absolute;
         right: 23px;
@@ -274,8 +286,14 @@ if (localStorage.length == 0) {
         opacity: 0;
         
     }
+    u
     body {
-        background-color: #111115;
+        background-color: #111115 !important;
+        /* position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; */
         
     }
     .he {
@@ -286,8 +304,8 @@ if (localStorage.length == 0) {
     }
     .opacity {
         margin-top: -40px;
-        min-height: 70vh;
-        background-color: rgba(133, 128, 128, 0)(133, 128, 128);
+        min-height: 80vh;
+        background-color: #111115 !important;
         position: relative;
         
     }
@@ -300,9 +318,10 @@ if (localStorage.length == 0) {
         max-width: 600px;
         position: relative;
         margin-top: 110px;
+        background-color: #111115 !important;
     }
     input {
-        background-color: #202027 !important;
+        background-color: #20202700 !important;
         outline: none !important;
         border: 0px !important;
         box-shadow: 0px rgba(255, 255, 255, 0) !important;
